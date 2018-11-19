@@ -1,0 +1,42 @@
+<html>
+<style type="text/css">
+    #container {
+        padding: 30px;
+        border: 2px solid;
+    }
+</style>
+<body>
+    <div id="container">
+        
+    </div>
+</body>
+<script type="text/javascript">
+    var arr = Array.apply(null, {
+        length: 8
+    }).map(function(value, index) {
+        return index + 1;
+    });
+    var returnElem = function(id, index) {
+        var elem = document.createElement('div');
+        elem.id = id;
+        elem.addEventListener('click', function(event) {
+            alert(index);
+            event.stopPropagation();
+        });
+        return elem;
+    };
+    var getLastElement = function(elem) {
+        return elem.firstElementChild === null ? elem : getLastElement(elem.firstElementChild);
+    };
+    var nestedDiv = arr.reduce(function(acc, iter) {
+        getLastElement(acc).append(returnElem("container", arr.length - iter + 1));
+        return acc;
+    }, returnElem("container", 9));
+    var onWindowElem = document.getElementById("container");
+    onWindowElem.addEventListener('click', function(event) {
+        alert(10);
+        event.stopPropagation();
+    });
+    onWindowElem.append(nestedDiv);
+</script>
+</html>
