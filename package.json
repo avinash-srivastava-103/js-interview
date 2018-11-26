@@ -1,0 +1,22 @@
+{
+  "name": "js-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tricks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/failuree/js-interview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/failuree/js-interview/issues"
+  },
+  "homepage": "https://github.com/failuree/js-interview#readme",
+  "dependencies": {
+    "30-seconds-of-code": "^1.2.2"
+  }
+}
